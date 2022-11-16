@@ -210,7 +210,7 @@ class ChessclockApp(MDApp):
          self.timer1_time = self.root.ids.timer1.text
          self.counter1 += 1
       # Starting timer1
-      Clock.schedule_interval(self.update_timer1, .01)
+      Clock.schedule_interval(self.update_timer1, .1)
 
    def timer2(self):
       # Assigning the value of timer2 text variable to timer2_time if it hasn't been called yet
@@ -218,7 +218,7 @@ class ChessclockApp(MDApp):
          self.timer2_time = self.root.ids.timer2.text
          self.counter2 += 1
       # Starting timer2
-      Clock.schedule_interval(self.update_timer2, .01)
+      Clock.schedule_interval(self.update_timer2, .1)
 
    def update_timer1(self, *args):
       minutes_before = f'{self.timer1_time.split(":")[0]}' # minutes on timer1 before operating with them
@@ -243,8 +243,6 @@ class ChessclockApp(MDApp):
 
       # Changing the timer2 label after operating with the time
       self.root.ids.timer1.text = f'{minutes}:{seconds}' 
-      print(minutes_before, seconds_before)
-
 
    def update_timer2(self, *args):
       minutes_before = f'{self.timer2_time.split(":")[0]}' # minutes on timer2 before operating with them
