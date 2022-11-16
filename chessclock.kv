@@ -1,0 +1,82 @@
+MDBoxLayout:
+   orientation: 'horizontal'
+   md_bg_color: '#363333' 
+
+   MDAnchorLayout:
+      size_hint: .4, 1
+
+      MDRaisedButton:
+         id: timer1
+         md_bg_color: '#c96b1e'
+         anchor_x: 'center'
+         anchor_y: 'center'
+         text_color: 'white'
+         elevation: 4
+         size_hint: .92, .9
+         font_size: 55
+         font_name: 'fonts/OpenSans-SemiBold.ttf'
+         text: '5:00'
+         md_bg_color_disabled: '#515152'
+         disabled_color: 'black'
+         on_press:
+            app.timer1_pressed()
+      
+   MDBoxLayout:
+      size_hint: .2, 1
+      orientation: 'vertical'
+
+      MDAnchorLayout:
+         MDIconButton:
+            id: reset
+            anchor_x: 'center'
+            anchor_y: 'top'
+            icon: 'replay'
+            icon_size: '50dp'
+            theme_icon_color: 'Custom'
+            icon_color: 'black'
+            on_release:
+               app.reset()
+      
+      MDAnchorLayout:
+         MDIconButton:
+            id: pause
+            anchor_x: 'center'
+            anchor_y: 'center'
+            icon: 'pause'
+            icon_size: '50dp'
+            theme_icon_color: 'Custom'
+            icon_color: 'black'
+            icon_color_disabled: '#2d2d2e'
+            on_release:
+               app.pause() if self.icon == 'pause' else app.resume()
+
+      MDAnchorLayout:
+         MDIconButton:
+            id: settings
+            anchor_x: 'center'
+            anchor_y: 'bottom'
+            icon: 'wrench'
+            icon_size: '42dp'
+            theme_icon_color: 'Custom'
+            icon_color: 'black'
+            on_release:
+               app.settings()
+
+   MDAnchorLayout:
+      size_hint: .4, 1
+
+      MDRaisedButton:
+         id: timer2
+         md_bg_color: '#c96b1e'
+         anchor_x: 'center'
+         anchor_y: 'center'
+         text_color: 'white'
+         elevation: 4
+         font_size: 55
+         size_hint: .92, .9
+         font_name: 'fonts/OpenSans-SemiBold.ttf'
+         text: '5:00'
+         md_bg_color_disabled: '#515152'
+         disabled_color: 'black'
+         on_press:
+            app.timer2_pressed()
