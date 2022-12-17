@@ -5,6 +5,6 @@
 ## Installation Instruction:
     $ git clone https://github.com/ZG06/Chess-Clock.git 
     $ cd Chess-Clock 
-    $ pip3 install -r requirements.txt 
+    $ pip install -r requirements.txt 
     $ chmod +x main.py 
-    $ ./main.py 
+    $ python3 main.py 
