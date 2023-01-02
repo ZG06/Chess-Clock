@@ -32,6 +32,8 @@ class ChessclockApp(MDApp):
       self.theme_cls.primary_palette = 'BlueGray' # Default primary palette
       self.timer1_init_time = '5:00' # Setting the initial timer1 time after starting the app
       self.timer2_init_time = '5:00' # Setting the initial timer1 time after starting the app
+      self.title = 'Chess Clock'
+      self.icon = './icon.png'
       return Builder.load_file('chessclock.kv')
 
    def timer1_pressed(self):
