@@ -1,7 +1,8 @@
 MDBoxLayout:
    orientation: 'horizontal'
-   md_bg_color: '#363333' 
+   md_bg_color: '#444444' 
 
+   # First timer
    MDAnchorLayout:
       size_hint: .4, 1
 
@@ -16,15 +17,17 @@ MDBoxLayout:
          font_size: 55
          font_name: 'fonts/OpenSans-SemiBold.ttf'
          text: '5:00'
-         md_bg_color_disabled: '#515152'
+         md_bg_color_disabled: '#db7f12'
          disabled_color: 'black'
          on_press:
             app.timer1_pressed()
       
+   # Buttons
    MDBoxLayout:
       size_hint: .2, 1
       orientation: 'vertical'
 
+      # Restart button
       MDAnchorLayout:
          MDIconButton:
             id: reset
@@ -36,7 +39,8 @@ MDBoxLayout:
             icon_color: 'black'
             on_release:
                app.reset()
-      
+
+      # Pause button
       MDAnchorLayout:
          MDIconButton:
             id: pause
@@ -46,10 +50,10 @@ MDBoxLayout:
             icon_size: '50dp'
             theme_icon_color: 'Custom'
             icon_color: 'black'
-            icon_color_disabled: '#2d2d2e'
             on_release:
                app.pause() if self.icon == 'pause' else app.resume()
 
+      # Settings button
       MDAnchorLayout:
          MDIconButton:
             id: settings
@@ -62,6 +66,7 @@ MDBoxLayout:
             on_release:
                app.settings()
 
+   # Second timer
    MDAnchorLayout:
       size_hint: .4, 1
 
@@ -76,7 +81,7 @@ MDBoxLayout:
          size_hint: .92, .9
          font_name: 'fonts/OpenSans-SemiBold.ttf'
          text: '5:00'
-         md_bg_color_disabled: '#515152'
+         md_bg_color_disabled: '#db7f12'
          disabled_color: 'black'
          on_press:
             app.timer2_pressed()
